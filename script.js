@@ -40,14 +40,14 @@ function handleCalculation() {
     }
     if (number > 1) {
         for (let roll = 1; roll < dice + 1; roll++) {
-            testFunction(roll);
+            handleSecondRoll(roll);
         } 
     }
     let percentage = ((success / (success + fail)) * (100)).toFixed(2);
     $(".result").html(`${percentage}% Chance of Success`);
 }
 
-function testFunction(roll) {
+function handleSecondRoll(roll) {
     for (let roll2 = 1; roll2 < dice +1; roll2++) {
         if (roll + roll2 + mod >= dc) {
             success++;

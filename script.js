@@ -1,0 +1,1 @@
+$("h2").html(Math.floor(Math.random() * 10 + 1));

@@ -28,17 +28,12 @@ function handleCalculation() {
     let success = 0;
     let fail = 0;
     for(let i = 1; i < dice + 1; i++) {
-        console.log("hey");
-        if (i >= dc) {
+        if (i + mod >= dc) {
             success++;
         } else {
             fail++;
         }
     }
-    console.log(success);
-    console.log(fail);
-    let percentage = success / (success + fail);
-    percentage = percentage * 100;
-    percentage = percentage.toFixed(2);
+    let percentage = ((success / (success + fail)) * (100)).toFixed(2);
     $(".result").html(`${percentage}% Chance of Success`);
 }

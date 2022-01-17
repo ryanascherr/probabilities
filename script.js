@@ -3,29 +3,42 @@ let dice = '';
 let mod = '';
 let dc = '';
 
-$(".mod").val("+0");
-
 $(".calculate").click(function() {
-    number = $(".number").val();
-    dice = $(".size").val();
-    mod = $(".mod").val();
-    dc = $(".dc").val();
+    number = parseInt($(".number").val());
+    dice = parseInt($(".size").val());
+    mod = parseInt($(".mod").val());
+    dc = parseInt($(".dc").val());
 
     handleErrorMessage();
 
     handleCalculation();
-   
 });
 
 function handleErrorMessage() {
-    if (isNaN(number) || isNaN(dice) || isNaN(mod)) {
+    if (isNaN(number) || isNaN(dice) || isNaN(mod) || isNaN(dc)){
         $(".error-message").html("All must be numbers");
         $(".result").html("");
         return;
     }
     $(".error-message").html("");
+    $(".result").html("");
 }
 
 function handleCalculation() {
-    $(".result").html(Math.floor(Math.random() * 10 + 1));
+    let success = 0;
+    let fail = 0;
+    for(let i = 1; i < dice + 1; i++) {
+        console.log("hey");
+        if (i >= dc) {
+            success++;
+        } else {
+            fail++;
+        }
+    }
+    console.log(success);
+    console.log(fail);
+    let percentage = success / (success + fail);
+    percentage = percentage * 100;
+    percentage = percentage.toFixed(2);
+    $(".result").html(`${percentage}% Chance of Success`);
 }

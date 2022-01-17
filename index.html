@@ -12,12 +12,55 @@
         <h1>Dice Probabilities</h1>
     </header>
     <main>
-        <span>Number of Dice:</span>
-        <input type="text" class="number">
-        <span>What Kind of Die:</span>
-        <input type="text" class="size">
-        <span>Modifiers:</span>
-        <input type="text" class="mod">
+        <select class="number">
+            <option value="Number of Dice">Number</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
+        <select class="size">
+            <option value="Number of Dice">Dice Size</option>
+            <option value="2">d2</option>
+            <option value="4">d4</option>
+            <option value="6">d6</option>
+            <option value="8">d8</option>
+            <option value="10">d10</option>
+            <option value="12">d12</option>
+            <option value="20">d20</option>
+            <option value="100">d100</option>
+        </select>
+        <select class="mod">
+            <option value="Modifier">Modifier</option>
+            <option value="-3">-3</option>
+            <option value="-2">-2</option>
+            <option value="-1">-1</option>
+            <option value="+0">+0</option>
+            <option value="+1">+1</option>
+            <option value="+2">+2</option>
+            <option value="+3">+3</option>
+            <option value="+4">+4</option>
+            <option value="5">+5</option>
+        </select>
+        <select class="dc">
+            <option value="Number of Dice">DC</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
         <button class="calculate">Calculate</button>
         <h2 class="error-message"></h2>
         <h2 class="result"></h2>

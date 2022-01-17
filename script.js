@@ -2,6 +2,8 @@ let number = '';
 let dice = '';
 let mod = '';
 let dc = '';
+let success = 0;
+let fail = 0;
 
 $(".calculate").click(function() {
     number = parseInt($(".number").val());
@@ -25,15 +27,32 @@ function handleErrorMessage() {
 }
 
 function handleCalculation() {
-    let success = 0;
-    let fail = 0;
-    for(let i = 1; i < dice + 1; i++) {
-        if (i + mod >= dc) {
+    success = 0;
+    fail = 0;
+    if (number == 1) {
+        for (let roll = 1; roll < dice + 1; roll++) {
+            if (roll + mod >= dc) {
+                success++;
+            } else {
+                fail++;
+            }
+        }
+    }
+    if (number > 1) {
+        for (let roll = 1; roll < dice + 1; roll++) {
+            testFunction(roll);
+        } 
+    }
+    let percentage = ((success / (success + fail)) * (100)).toFixed(2);
+    $(".result").html(`${percentage}% Chance of Success`);
+}
+
+function testFunction(roll) {
+    for (let roll2 = 1; roll2 < dice +1; roll2++) {
+        if (roll + roll2 + mod >= dc) {
             success++;
         } else {
             fail++;
         }
     }
-    let percentage = ((success / (success + fail)) * (100)).toFixed(2);
-    $(".result").html(`${percentage}% Chance of Success`);
 }

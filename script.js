@@ -12,7 +12,6 @@ $(".calculate").click(function() {
     dc = parseInt($(".dc").val());
 
     handleErrorMessage();
-
     handleCalculation();
 });
 
@@ -56,3 +55,38 @@ function handleSecondRoll(roll) {
         }
     }
 }
+// let extraThings = numberOfDice - 1;
+// for (let roll = 1; roll < Math.pow(dice, number));
+
+// for (let roll = 1; roll < Math.pow(dice, number); roll++) {
+//     if (roll + mod >= dc) {
+        
+//     }
+// }
+// let quantity = 0;
+
+// bruteForceAllNdNCombinations();
+
+// function bruteForceAllNdNCombinations(sides, quantity){    
+//     console.log(quantity);
+//     quantity = 3;
+//     sides = 6;
+//     var rolls = [];
+//     console.log(quantity);
+//     if (quantity > 1) { // if there is more than one dice to roll
+//       var nMinus1Rolls = bruteForceAllNdNCombinations(sides, quantity-1)
+//       nMinus1Rolls.forEach(roll => { 
+//          for (var i = 1; i <= sides; i++) {
+//           rolls.push(roll.concat(i))
+//         }
+//       })
+//       console.log(quantity);
+//     } else { // if we are only rolling 1 dice
+//       for (var i = 1; i <= sides; i++) {
+//         rolls.push([i])     
+//       }  
+//     }
+//     console.log(quantity);
+//     console.log(rolls);
+//     // return rolls;
+//   }
